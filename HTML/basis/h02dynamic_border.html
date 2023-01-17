@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dynamic Border</title>
+</head>
+<body>
+    <div class="box">
+        <span></span>
+        <h2>1</h2>
+    </div>
+</body>
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/*body是整个页面，根元素*/
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #181818;
+}
+.box {
+    
+    position: relative;
+    width: 300px;
+    height: 400px;
+    background-color: rgba(0,0,0,0.75);
+    border-radius: 20px;
+    /* 多余的部分隐藏 */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box::before {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    /* conic-gradient()圆锥渐变色 */
+    background-image: conic-gradient(transparent,transparent,transparent, #8758ff);
+    animation: animate 4s linear infinite;
+}
+.box::after {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    /* conic-gradient()圆锥渐变色 */
+    background-image: conic-gradient(transparent,transparent,transparent, #5cb8e4);
+    animation: animate 4s linear infinite;
+    /* 设置一个延迟，让两个分开 */
+    animation-delay: -2s;
+}
+@keyframes animate {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+/* span的作用是遮挡 */
+.box span {
+    position: absolute;
+    inset: 5px;
+    border-radius: 16px;
+    background-color: #181818;
+    /* z-index 属性指定一个元素的堆叠顺序。
+    拥有更高堆叠顺序的元素总是会处于堆叠顺序较低的元素的前面。 */
+    z-index: 1;
+}
+.box h2 {
+    position: relative;
+    z-index: 2;
+    color: #f2f2f2;
+    font-size: 10em;
+}
+</style>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>page layout</title>
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <h1>main title</h1>
+        </div>
+        <div id="menu">
+            <ol>
+                <li><a href="">first</a></li>
+                <li><a href="">second</a></li>
+                <li><a href="">third</a></li>
+            </ol>
+        </div>
+        <div id="main">
+            <p>main1</p>
+            <p>main2</p>
+            
+        </div>
+        <div id="footer">
+            footer
+        </div>
+    </div>
+</body>
+<style>
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+}
+:root {
+    --menu-main-height : 500px;
+}
+#header {
+    background-color: lightgreen;
+    /*不透明度，所有子元素都继承相同的透明度*/
+    opacity: 0.8;
+}
+#menu {
+    height: var(--menu-main-height);
+    background-color: lightblue;
+    float: left;
+    width: 20%;
+}
+#main {
+    
+    height: var(--menu-main-height);
+    float: left;
+    width: 80%;
+    padding: 2% 4%;
+    background-color: lightgrey;
+    background-image: url("rabit.png");
+    background-size: 100px 100px;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-attachment: scroll;
+}
+#footer {
+    background-color: lightyellow;
+    clear: both;
+}
+h1 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+ol {
+    border: 1px solid red;
+    margin: 5% 10%;
+}
+p{
+    /*
+    padding margin 的百分数相对于父元素的width，
+    是的你没有看错，是width，不是height
+    */
+    margin: 0;
+    padding: 0;
+    
+}
+</style>
+</html>
