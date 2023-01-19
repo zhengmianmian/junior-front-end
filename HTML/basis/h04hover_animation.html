@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hover animation</title>
+</head>
+<body>
+    <div class="container">
+        <!-- input ul>li*5 -->
+        <ul>
+            <li style="--color:#00ade1">
+                <a data-url="#" data-text="&nbsp;Home">&nbsp;Home</a>
+            </li>
+            <li style="--color:#ff6493">
+                <a data-url="#" data-text="&nbsp;About">&nbsp;About</a>
+            </li>
+            <li style="--color:#ffdd1c">
+                <a data-url="#" data-text="&nbsp;User">&nbsp;User</a>
+            </li>
+            <li style="--color:#00dc82">
+                <a data-url="#" data-text="&nbsp;List">&nbsp;List</a>
+            </li>
+            <li style="--color:#dc00d4">
+                <a data-url="#" data-text="&nbsp;Setting">&nbsp;Setting</a>
+            </li>
+        </ul>
+    </div>
+</body>
+<style>
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #282839;
+}
+ul {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+ul li {
+    position: relative;
+    list-style-type: none;
+}
+ul li a {
+    position: relative;
+    font-size: 2em;
+    line-height: 1em;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
+}
+ul li a::before {
+    /* 
+    规定不进行换行
+    文本不会换行，文本会在在同一行上继续，直到遇到 <br> 标签为止。
+     */
+    white-space: nowrap;
+    content: attr(data-text);
+    position: absolute;
+    width: 0px;
+    color: var(--color);
+    overflow: hidden;
+    transition: 1s;
+    border-right: 4px solid var(--color);
+    -webkit-text-stroke: 1px var(--color);
+}
+ul li a:hover::before{
+    width: 100%;
+    filter: drop-shadow(0 0 25px var(--color));
+}
+</style>
+</html>
