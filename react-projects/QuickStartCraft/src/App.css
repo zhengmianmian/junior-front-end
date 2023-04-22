@@ -1,0 +1,16 @@
+*{
+  box-sizing: border-box;
+}
+
+#root {
+  margin: auto;
+  background-color: #aaa;
+}
+
+.boardContainer{
+  width:800px;
+  height:400px;
+  overflow:hidden;
+  border: 1px solid skyblue;
+  
+}
