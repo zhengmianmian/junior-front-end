@@ -21,10 +21,25 @@
             <div class="cup" data-drop="copy"></div>
         </div>
     </div>
+    <div class="container">
+        <p>click to see effects</p>
+    </div>
     <script src="h11.js"></script>
 </body>
 <style>
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: aquamarine;
+    margin: 0;
+}
+h1{
+    text-align: center;
+}
 .container{
+    border: 3px solid blueviolet;
+    margin: 20px 0;
     width: 100%;
     height: 100vh;
     display: flex;
@@ -51,11 +66,12 @@
 .cup{
     width: 60%;
     height: 15%;
-    margin: 10px;
+    margin: 10px auto;
     background-color: lightblue;
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: background-color 1s;
 }
 .drop-over{
     background-color: blueviolet;

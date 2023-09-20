@@ -3,7 +3,7 @@ let source;
 container.ondragstart = e=>{
     e.dataTransfer.effectAllowed = e.target.dataset.effect;//move copy
     source = e.target;
-    //console.log('start', e.target)
+    console.log('start', e.dataTransfer)
 }
 container.ondragover = e=>{
     e.preventDefault();
@@ -31,7 +31,9 @@ container.ondragenter = e=>{
 }
 container.ondrop = e=>{
     const dropNode = getDropNode(e.target);
-    const cloned = source.cloneNode(true);
+    let cloned = source.cloneNode(true);
+    cloned.setAttribute("draggable", false);
+    cloned.removeAttribute("data-effect");//can not drag this
     if (dropNode && dropNode.dataset.drop===e.dataTransfer.effectAllowed){
         dropNode.innerHTML = ""
         dropNode.appendChild(cloned);
