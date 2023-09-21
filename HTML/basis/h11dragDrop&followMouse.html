@@ -21,8 +21,13 @@
             <div class="cup" data-drop="copy"></div>
         </div>
     </div>
-    <div class="container">
-        <p>click to see effects</p>
+    <div class="box-container">
+        <div class="box">
+            <svg class="svg-icon" viewBox="0 0 20 20">
+                <path d="M17.659,9.597h-1.224c-0.199-3.235-2.797-5.833-6.032-6.033V2.341c0-0.222-0.182-0.403-0.403-0.403S9.597,2.119,9.597,2.341v1.223c-3.235,0.2-5.833,2.798-6.033,6.033H2.341c-0.222,0-0.403,0.182-0.403,0.403s0.182,0.403,0.403,0.403h1.223c0.2,3.235,2.798,5.833,6.033,6.032v1.224c0,0.222,0.182,0.403,0.403,0.403s0.403-0.182,0.403-0.403v-1.224c3.235-0.199,5.833-2.797,6.032-6.032h1.224c0.222,0,0.403-0.182,0.403-0.403S17.881,9.597,17.659,9.597 M14.435,10.403h1.193c-0.198,2.791-2.434,5.026-5.225,5.225v-1.193c0-0.222-0.182-0.403-0.403-0.403s-0.403,0.182-0.403,0.403v1.193c-2.792-0.198-5.027-2.434-5.224-5.225h1.193c0.222,0,0.403-0.182,0.403-0.403S5.787,9.597,5.565,9.597H4.373C4.57,6.805,6.805,4.57,9.597,4.373v1.193c0,0.222,0.182,0.403,0.403,0.403s0.403-0.182,0.403-0.403V4.373c2.791,0.197,5.026,2.433,5.225,5.224h-1.193c-0.222,0-0.403,0.182-0.403,0.403S14.213,10.403,14.435,10.403"></path>
+            </svg>
+        </div>
+        <div id="box2"></div>
     </div>
     <script src="h11.js"></script>
 </body>
@@ -45,6 +50,12 @@ h1{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.box-container{
+    border: 3px solid blueviolet;
+    margin: 20px 0;
+    width: 100%;
+    height: 100vh;
 }
 .left, .right{
     margin: 10px;
@@ -75,6 +86,37 @@ h1{
 }
 .drop-over{
     background-color: blueviolet;
+}
+.box{
+    position: absolute;
+    transition: top 0.5s, left 0.5s;
+    transition-timing-function: ease-out;
+}
+/* -----
+SVG Icons - svgicons.sparkk.fr
+----- */
+
+.svg-icon {
+  width: 60px;
+  height: 60px;
+}
+
+.svg-icon path,
+.svg-icon polygon,
+.svg-icon rect {
+  fill: #4691f6;
+}
+
+.svg-icon circle {
+  stroke: #4691f6;
+  stroke-width: 1;
+}
+
+#box2{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    background-color: palevioletred;
 }
 </style>
 </html>
