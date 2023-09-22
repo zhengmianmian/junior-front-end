@@ -1,0 +1,31 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+}
+.container{
+    background: linear-gradient(to bottom right,#f69d3c, #3f87a6);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.moveable-area{
+    width: 60%;
+    height: 60%;
+    background: linear-gradient(#e66465, #9198e5);
+    border: 2px solid black;
+}
+#box{
+    width: 100px;
+    height: 100px;
+    background-color: goldenrod;
+    transition: background-color 0.5s;
+    position: absolute;
+}
+#box:hover{
+    background-color: gold;
+    cursor: grab;
+}
