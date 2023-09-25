@@ -1,38 +1,60 @@
 import * as React from 'react';
-import {useState} from 'react';
+import { useState, useEffect } from 'react';
 import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
+import Select from '@mui/material/Select';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
-import styles from './Count.module.css'
-function Count(props) {
-    const [age, setAge] = useState(0);
-    const [count, setCount] = useState(0);
+import styles from './Count.module.css';
+import store from '../../redux/store';
+
+function Count() {
+    const [age, setAge] = useState(1);
+    const [needRender, setNeedRender] = useState(false);
     const handleChange = (event) => {
         setAge(event.target.value);
     };
+    // watch store changes, if there are changes, re-render
+    useEffect(()=>{
+        store.subscribe(()=>{
+            //触发render
+            setNeedRender(!needRender);
+        })
+    })
     const increment = ()=>{
-        setCount(count+age);
+        store.dispatch({
+            type:'increment',
+            data: age,
+        })
     }
     const decrement = ()=>{
-        setCount(count-age);
+        store.dispatch({
+            type:'decrement',
+            data: age,
+        })
     }
     const incrementIfOdd=()=>{
-        if(count%2 !== 0){
-            setCount(count+age);
+        if(store.getState()%2 !== 0){
+            store.dispatch({
+                type:'increment',
+                data: age,
+            })
         }
     }
     const incrementAsync = ()=>{
         setTimeout(()=>{
-            setCount(count+age);
+            store.dispatch({
+                type:'increment',
+                data: age,
+            })
         }, 1000)
     }
     return (
         <div>
-            <h2>Current result: {count} </h2>
+            {/* store.getState() is used to get value */}
+            <h2>Current result: { store.getState() } </h2>
             <div className={styles.centerContainer}>
                 <Box sx={{ width: 120 }}>
                     <FormControl fullWidth>
