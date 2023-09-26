@@ -9,7 +9,8 @@ import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import styles from './Count.module.css';
 import store from '../../redux/store';
-
+import {createIncrementAction, createDecrementAction} from '../../redux/count_action.js';
+import { INCREMENT,DECREMENT } from '../../redux/constant.js';
 function Count() {
     const [age, setAge] = useState(1);
     const [needRender, setNeedRender] = useState(false);
@@ -24,21 +25,16 @@ function Count() {
         })
     })
     const increment = ()=>{
-        store.dispatch({
-            type:'increment',
-            data: age,
-        })
+        // use action creator here
+        store.dispatch(createIncrementAction(age))
     }
     const decrement = ()=>{
-        store.dispatch({
-            type:'decrement',
-            data: age,
-        })
+        store.dispatch(createDecrementAction(age))
     }
     const incrementIfOdd=()=>{
         if(store.getState()%2 !== 0){
             store.dispatch({
-                type:'increment',
+                type: INCREMENT,
                 data: age,
             })
         }
