@@ -1,0 +1,19 @@
+*{
+  box-sizing: border-box;
+}
+.App {
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.AppHeader {
+  font-size: calc(10px + 2vmin);
+}
+.container{
+  width: 100%;
+  height: 100dvh;
+  border-top: 2px solid #7696b6;
+  background-color: #94b9de;
+}
+
