@@ -20,3 +20,25 @@ body{
     width: 100%;
     height: 100%;
 }
+
+.bubble {
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+    animation: myAni 3s infinite;
+}
+/* .bubble:hover {
+    border-radius: 30% 70% 64% 36% / 60% 64% 36% 40%;
+} */
+
+@keyframes myAni {
+    0% {
+        border-radius: 67% 33% 46% 54% / 80% 19% 81% 20%;
+    }
+    50% {
+        border-radius: 14% 86% 72% 28% / 80% 70% 30% 20%;
+    }
+    100% {
+        border-radius: 67% 33% 46% 54% / 80% 19% 81% 20%;
+    }
+}
