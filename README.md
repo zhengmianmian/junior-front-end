@@ -11,9 +11,13 @@ This is my junior front end learning path. HTML/CSS/JS/Vue/React etc..
 
 #### 07 cool btns
 before hovering
+
 ![btns](/assets/hover-btns.png)
+
 hover it
+
 ![hover-btns](/assets/hovered.png)
+
 #### 11 drag and drop
 ![dnd](/assets/dragdrop.png)
 ### glass card
