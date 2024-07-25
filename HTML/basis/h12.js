@@ -66,3 +66,9 @@ box.onmousedown = (e)=>{
 // x = x + window.scrollX;
 // y = y + window.scrollY;
 // console.log('x: ', x, ' y: ', y)
+
+const text = document.querySelector(".text");
+text.onclick = (e) => {
+    console.log('class name is ', e.target.getAttribute('class'));
+    console.log(e.target.getAttributeNames());
+}

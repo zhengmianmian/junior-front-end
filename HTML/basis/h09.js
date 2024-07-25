@@ -33,8 +33,14 @@ function Person(firstName,lastName,age){
 };
 
 var person1 = new Person("Nike","Black", 18);
-console.log(Object.__proto__)
-console.log(Object.prototype)
-console.log(person1.__proto__);
-console.log(Person.prototype);
-console.log(person1.getFullName())
+// console.log(Object.__proto__)
+// console.log(Object.prototype)
+// console.log(person1.__proto__);
+// console.log(Person.prototype);
+// console.log(person1.getFullName())
+
+const myObj = {
+    a: 'aaa',
+    b: 'bbb'
+}
+console.log('get value through attribute name string',myObj['a']);

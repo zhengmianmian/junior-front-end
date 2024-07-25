@@ -5,7 +5,6 @@ import Count from './components/count/Count';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import Button from '@mui/material/Button';
-import Switch from '@mui/material/Switch';
 import Slider from '@mui/material/Slider';
 import Typography from '@mui/material/Typography';
 function App() {
