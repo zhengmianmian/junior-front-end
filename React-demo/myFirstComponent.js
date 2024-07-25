@@ -2,7 +2,7 @@
 1:function
 2:extends React.Component
 Always start component names with a capital letter.
-大写名字*/
+*/
 function HelloMessage(props) {
     return (
     <div>
@@ -22,14 +22,12 @@ class Clock extends React.Component {
       super(props);
       this.state = {date: new Date()};
     }
-    //生命周期钩子
     componentDidMount() {
         this.timerID = setInterval(
           () => this.tick(),
           this.props.t
         );
       }
-    //生命周期钩子 
     componentWillUnmount() {
         clearInterval(this.timerID);
     }
@@ -43,14 +41,14 @@ class Clock extends React.Component {
         return (
             <div>
             <h1>current time</h1>
-            <h2>现在是 {this.state.date.toLocaleTimeString()}.</h2>
+            <h2>Now it's {this.state.date.toLocaleTimeString()}.</h2>
             </div>
         );
     }
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-/*一定要是大写的才对 */
+/*must be upper case */
 const element = (<div>
     <HelloMessage name="Bob" age="15" />
     <Clock t={1000} />
