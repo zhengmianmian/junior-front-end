@@ -1,0 +1,45 @@
+body {
+  margin: 0;
+}
+.head{
+  height: 10dvh;
+  width: 100%;
+  background-color: #222;
+}
+.page {
+  height: 100dvh;
+  width: 100%;
+  background: #333;
+  border-bottom: 1px solid #d1d1d1;
+}
+
+.wrapper {overflow: auto;}
+
+@media screen and (min-width: 600px) {
+  #leftsidebar {width: 200px; float: left;}
+  #main {margin-left: 216px;}
+}
+
+@media screen and (max-width: 600px){
+	#main {margin-left: 4px;}
+    #leftsidebar {
+      float: none;
+      width: auto;
+    }
+}
+#main {
+  color: white;
+}
+#menulist {
+  margin: 0;
+  padding: 0;
+}
+
+.menuitem {
+  background: #CDF0F6;
+  border: 1px solid #d4d4d4;
+  border-radius: 4px;
+  list-style-type: none;
+  margin: 4px;
+  padding: 2px;
+}
