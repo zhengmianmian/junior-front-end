@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 body {
   margin: 0;
 }
@@ -7,7 +10,7 @@ body {
   background-color: #222;
 }
 .page {
-  height: 100dvh;
+  min-height: 100dvh;
   width: 100%;
   background: #333;
   border-bottom: 1px solid #d1d1d1;
@@ -15,17 +18,31 @@ body {
 
 .wrapper {overflow: auto;}
 
+#leftsidebar {
+  background-color: #555;
+  padding: 10px;
+}
 @media screen and (min-width: 600px) {
-  #leftsidebar {width: 200px; float: left;}
-  #main {margin-left: 216px;}
+  #leftsidebar {
+    margin: 20px;
+    height: 80dvh;
+    width: 200px; 
+    float: left;
+  }
+  #main {
+    margin-left: 216px;
+  }
 }
 
 @media screen and (max-width: 600px){
-	#main {margin-left: 4px;}
-    #leftsidebar {
-      float: none;
-      width: auto;
-    }
+	#main {
+    margin-left: 4px;
+  }
+  #leftsidebar {
+    margin: 20px auto;
+    float: none;
+    width: 80%;
+  }
 }
 #main {
   color: white;
@@ -37,9 +54,30 @@ body {
 
 .menuitem {
   background: #CDF0F6;
-  border: 1px solid #d4d4d4;
+  border: 1px solid red;
   border-radius: 4px;
   list-style-type: none;
   margin: 4px;
   padding: 2px;
+}
+
+/* These four set scroll bar */
+/* width */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #111; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: grey; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #444; 
 }
