@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>debounce</title>
+  </head>
+  <body>
+    <script>
+      function debounce(func, timeout = 300) {
+        let timer;
+        return (...args) => {
+          clearTimeout(timer);
+          timer = setTimeout(() => {
+            func.apply(this, args);
+          }, timeout);
+        };
+      }
+      function myFunc() {
+        console.log("do something.");
+      }
+      const processChange = debounce(() => myFunc());
+    </script>
+    <button id="btn" onclick="processChange()">click me</button>
+  </body>
+</html>
